@@ -1,0 +1,15 @@
+@mixin close-pseudo
+  position: absolute
+  left: 15px
+  content: " "
+  height: 33px
+  width: 3px
+  background-color: #fff
+  
+@mixin mobile-only
+  @media screen and (max-width: 540px)
+    @content
+
+@mixin tablet-only
+  @media screen and (max-width: 768px)
+    @content
