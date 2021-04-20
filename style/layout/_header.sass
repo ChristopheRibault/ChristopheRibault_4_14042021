@@ -1,0 +1,51 @@
+.topnav
+  overflow: hidden
+  margin: 3.5%
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  align-items: start
+  a
+    display: block
+    color: #000000
+    text-align: center
+    padding: 12px 12px
+    margin: 5px
+    text-decoration: none
+    font-size: 1rem
+    font-family: Roboto, sans-serif
+    @include tablet-only
+      display: none
+    &:hover
+      background-color: #ff0000
+      color: #ffffff
+      border-radius: 15px
+    &.active
+      background-color: #ff0000
+      color: #ffffff
+      border-radius: 15px
+
+  .icon
+    display: none
+    @include tablet-only
+      display: block
+
+  &.responsive
+    @include tablet-only
+      a
+        display: block
+
+.main-navbar
+  display: flex
+  flex-flow: column nowrap
+  align-items: flex-end
+  &__links
+    display: flex
+    @include tablet-only
+      flex-flow: column nowrap
+      align-items: flex-start
+
+.header-logo 
+  @include mobile-only
+    img
+      width: 200px
