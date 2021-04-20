@@ -59,3 +59,18 @@
 .text-label
   font-weight: normal
   font-size: 16px
+
+.text-control
+  &:valid
+    @include input-control("valid")
+  &:invalid
+    @include input-control("invalid")
+  
+.form-validated
+  display: none
+  font-weight: bold
+  font-size: 1rem
+  border-radius: 10px
+  margin-top: 20px
+  padding: 5px
+  @include input-control("valid")

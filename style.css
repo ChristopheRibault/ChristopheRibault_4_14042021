@@ -463,6 +463,29 @@ main {
   font-size: 16px;
 }
 
+.text-control:valid {
+  background-color: #e6ffe6;
+  border: 2px solid green;
+  color: green;
+}
+.text-control:invalid {
+  background-color: white;
+  border: 2px solid red;
+  color: red;
+}
+
+.form-validated {
+  display: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 5px;
+  background-color: #e6ffe6;
+  border: 2px solid green;
+  color: green;
+}
+
 .footer {
   margin: 20px;
   padding: 10px;
