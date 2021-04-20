@@ -5,12 +5,11 @@ main
   padding-top: 0.5vw
   padding-left: 2vw
   padding-right: 2vw
-  margin: 1px 20px 15px
   border-radius: 2rem
   text-align: justify
 
 .modal-btn
-  font-size: 145%
+  font-size: 1em
   background: #fe142f
   display: flex
   margin: auto
@@ -30,6 +29,7 @@ main
   overflow: hidden
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2)
   margin-bottom: 10px
+  width: 100%
   > .btn-signup 
     display: none
   @include tablet-only
@@ -47,7 +47,7 @@ main
   color: #fff
   position: relative
   text-align: left
-  min-width: 424px
+  width: 100%
   &::after
     content: ""
     width: 100%
@@ -59,6 +59,8 @@ main
   > *
     position: relative
     z-index: 1
+  .btn-signup
+    margin-top: 50px
   @include tablet-only
     background: #fff
     color: #000
@@ -69,12 +71,14 @@ main
       display: none
 
 .hero-headline
-  font-size: 6rem
+  font-size: 3em
   font-weight: normal
   white-space: nowrap
   @include tablet-only
     font-size: 4.5rem
     white-space: normal
+  @include mobile-only
+    font-size: 2.5rem
 
 .hero-text
   width: 146%
@@ -84,6 +88,8 @@ main
   @include tablet-only
     width: unset
     font-size: 1.5rem
+  @include mobile-only
+    font-size: 1rem
 
 .hero-img
   grid-column: span 8
@@ -92,6 +98,7 @@ main
     height: 100%
     display: block
     padding: 0
+    object-fit: cover
     @include tablet-only
       border-radius: 10px
       margin-top: 40px
