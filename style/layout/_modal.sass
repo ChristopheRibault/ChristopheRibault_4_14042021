@@ -62,19 +62,15 @@
 
 .text-control
   &:valid
-    background-color: lighten(green, 70%)
-    border: 2px solid green
+    @include input-control("valid")
   &:invalid
-    background-color: lighten(red, 70%)
-    border: 2px solid red
+    @include input-control("invalid")
   
 .form-validated
   display: none
   font-weight: bold
   font-size: 1rem
-  border: 3px solid green
   border-radius: 10px
-  background-color: lighten(green, 70%)
   margin-top: 20px
   padding: 5px
-  color: green
+  @include input-control("valid")

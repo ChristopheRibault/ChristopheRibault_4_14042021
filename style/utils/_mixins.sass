@@ -13,3 +13,14 @@
 @mixin tablet-only
   @media screen and (max-width: 768px)
     @content
+
+@mixin input-control($state: "valid")
+  $color: null
+  @if ($state == "valid")
+    $color: green
+  @else
+    $color: red
+
+  background-color: lighten($color, 70%)
+  border: 2px solid $color
+  color: $color
