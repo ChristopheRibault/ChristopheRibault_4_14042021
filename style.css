@@ -58,7 +58,7 @@ input {
 
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 0.4em;
+  font-size: 0.6em;
   color: #e54858;
   display: block;
   margin-top: 7px;
@@ -66,13 +66,12 @@ input {
   text-align: right;
   line-height: 0.3;
   opacity: 0;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .formData[data-error-visible=true]::after {
   opacity: 1;
 }
-
 .formData[data-error-visible=true] .text-control {
   border: 2px solid #e54858;
 }
@@ -178,6 +177,11 @@ input {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: start;
+}
+@media screen and (max-width: 768px) {
+  .topnav {
+    flex-flow: row nowrap;
+  }
 }
 .topnav a {
   display: block;
@@ -461,17 +465,6 @@ main {
 .text-label {
   font-weight: normal;
   font-size: 16px;
-}
-
-.text-control:valid {
-  background-color: #e6ffe6;
-  border: 2px solid green;
-  color: green;
-}
-.text-control:invalid {
-  background-color: white;
-  border: 2px solid red;
-  color: red;
 }
 
 .form-validated {

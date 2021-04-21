@@ -10,9 +10,15 @@ function editNav() {
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
+const formData = document.querySelectorAll(".formData > input");
 const validTag = document.querySelector(".form-validated");
 const form = document.querySelector(".modal-body > form")
+
+// formData validation
+function showValidation(e) {
+  e.target.parentElement.setAttribute("data-error-visible", (!e.target.checkValidity()))
+}
+formData.forEach((el) => el.addEventListener("blur", showValidation));
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -22,10 +28,23 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-// Show form validation message
-function handleForm(e) {
+// Submit form
+function validate(e) {
   e.preventDefault();
-  validTag.style.display = "block";
+
+  let formIsValid = true;
+  for (const input of document.forms.reserve.elements) {
+    if (!input.checkValidity()) {
+      input.parentElement.setAttribute("data-error-visible", true)
+      formIsValid = false;
+    }
+  }
+
+  if (formIsValid) {
+    validTag.style.display = "block";
+    return true;
+  }
+
+  return false;
 }
-form.addEventListener("submit", handleForm)
 
