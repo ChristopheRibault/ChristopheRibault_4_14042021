@@ -13,6 +13,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData > input");
 const validTag = document.querySelector(".form-validated");
 const form = document.querySelector(".modal-body > form")
+const closeBtn = document.querySelector(".close");
 
 // Set data-error-visible
 function toggleDataError(input){
@@ -33,12 +34,20 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+// Close modal form
+function closeModal(e) {
+  if (e.target !== e.currentTarget) return;
+  modalbg.style.display = "none";
+}
+closeBtn.addEventListener("click", closeModal);
+modalbg.addEventListener("click", closeModal)
+
 // Submit form
 function validate(e) {
   e.preventDefault();
 
   let formIsValid = true;
-  
+
   for (const input of document.forms.reserve.elements) {
     toggleDataError(input);
     if (!input.checkValidity()) {
