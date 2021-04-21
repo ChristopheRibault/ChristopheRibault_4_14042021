@@ -14,9 +14,14 @@ const formData = document.querySelectorAll(".formData > input");
 const validTag = document.querySelector(".form-validated");
 const form = document.querySelector(".modal-body > form")
 
+// Set data-error-visible
+function toggleDataError(input){
+  input.parentElement.setAttribute("data-error-visible", !input.checkValidity())
+}
+
 // formData validation
 function showValidation(e) {
-  e.target.parentElement.setAttribute("data-error-visible", (!e.target.checkValidity()))
+  toggleDataError(e.target)
 }
 formData.forEach((el) => el.addEventListener("blur", showValidation));
 
@@ -33,9 +38,10 @@ function validate(e) {
   e.preventDefault();
 
   let formIsValid = true;
+  
   for (const input of document.forms.reserve.elements) {
+    toggleDataError(input);
     if (!input.checkValidity()) {
-      input.parentElement.setAttribute("data-error-visible", true)
       formIsValid = false;
     }
   }
