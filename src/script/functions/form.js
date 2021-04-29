@@ -1,4 +1,7 @@
+import moment from "moment";
 import { form, validForm } from "../elements";
+
+const MIN_AGE = 18;
 
 class Form {
 
@@ -8,7 +11,16 @@ class Form {
    * @param {HTMLInputElement} input
    */
   static toggleDataError(input){
-    input.parentElement.setAttribute("data-error-visible", !input.checkValidity())
+    let visible = false
+    // If input is birthdate, date is valid but age is too young, change data-error message
+    if (input.name === "birthdate" && input.checkValidity() && !Form.ageIsValid(input.value)) {
+      visible = true;
+      input.parentElement.setAttribute("data-error", `Vous devez avoir au moins ${MIN_AGE} ans pour participer.`)
+    } else {
+      // Set data-error visible if input value is invalid
+      visible = !input.checkValidity()
+    }
+    input.parentElement.setAttribute("data-error-visible", visible)
   }
 
   /**
@@ -18,6 +30,21 @@ class Form {
    */
   static showValidation(e) {
     Form.toggleDataError(e.target)
+  }
+
+  /**
+   * check if age is valid
+   * @static
+   * @param {Date} birthdate 
+   * @returns {boolean}
+   */
+  static ageIsValid(birthdate) {
+    const now = moment();
+    if (now.subtract(MIN_AGE, 'years') < moment(birthdate)) {
+      console.log('trop jeune');
+      return false;
+    }
+    return true;
   }
 
   /**
