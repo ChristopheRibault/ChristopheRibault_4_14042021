@@ -2,8 +2,10 @@ const path = require('path');
 
 module.exports = {
   mode: "production",
+  watch: true,
   entry: {
     app: "./src/script/index.js",
+    style: "./src/style/index.sass",
   },
   output: {
     filename: "[name].bundle.js",
@@ -13,7 +15,9 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [
+          path.resolve(__dirname, "node_modules")
+        ],
         use: {
           loader: "babel-loader",
           options: {

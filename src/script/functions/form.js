@@ -1,4 +1,3 @@
-import moment from "moment";
 import { form, validForm } from "../elements";
 
 const MIN_AGE = 18;
@@ -41,7 +40,6 @@ class Form {
   static ageIsValid(birthdate) {
     const now = moment();
     if (now.subtract(MIN_AGE, 'years') < moment(birthdate)) {
-      console.log('trop jeune');
       return false;
     }
     return true;
