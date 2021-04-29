@@ -149,7 +149,8 @@ input {
 }
 
 .btn-submit,
-.btn-signup {
+.btn-signup,
+.btn-close {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -438,7 +439,7 @@ main {
   margin: 15px auto;
 }
 
-.close {
+.closeX {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -448,7 +449,7 @@ main {
   cursor: pointer;
   transform: scale(0.7);
 }
-.close:before {
+.closeX:before {
   position: absolute;
   left: 15px;
   content: " ";
@@ -457,7 +458,7 @@ main {
   background-color: #fff;
   transform: rotate(45deg);
 }
-.close::after {
+.closeX::after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -474,14 +475,18 @@ main {
 
 .form-validated {
   display: none;
-  font-weight: bold;
-  font-size: 1rem;
-  border-radius: 10px;
-  margin-top: 20px;
-  padding: 5px;
-  background-color: #e6ffe6;
-  border: 2px solid green;
-  color: green;
+  font-size: 1.5rem;
+}
+.form-validated__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.form-validated__text {
+  width: 50%;
+  margin: 10rem auto;
+  text-align: center;
+  font-weight: normal;
 }
 
 .footer {

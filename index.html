@@ -52,9 +52,9 @@
         </button>
       </div>
 
-      <div class="bground">
+      <div class="bground close">
         <div class="content">
-          <span class="close"></span>
+          <span class="close closeX"></span>
           <div class="modal-body">
             <form
               name="reserve"
@@ -207,9 +207,12 @@
                 formnovalidate="formnovalidate"
               />
             </form>
-            <span class="form-validated">
-              Merci ! Votre réservation a bien été reçue.
-            </span>
+            <div class="form-validated">
+              <div class="form-validated__container">
+                <p class="form-validated__text">Merci !<br/> Votre réservation a bien été reçue.</p>
+                <button class="btn-close close">Fermer</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
