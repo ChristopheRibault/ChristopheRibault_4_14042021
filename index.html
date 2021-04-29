@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
@@ -12,12 +11,12 @@
     />
   </head>
   <body>
-    <header class="topnav" id="myTopnav">
+    <header class="topnav" id="topnav">
       <div class="header-logo">
         <img alt="logo" src="./assets/images/Logo.png" width="auto" height="auto" />
       </div>
       <nav class="main-navbar">
-        <a href="javascript:void(0);" class="icon" onclick="editNav()">
+        <a href="javascript:void(0);" class="icon" id="navBtn">
           <i class="fa fa-bars"></i>
         </a>
           <div class="main-navbar__links">
@@ -60,7 +59,6 @@
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate(event)"
             >
               <div class="formData" data-error="Veuillez entrer un prénom d'au moins 2 caractères">
                 <label for="first">Prénom</label><br>
@@ -222,6 +220,6 @@
         Copyright 2014 - 2020, GameOn Inc.
       </p>
     </footer>
-    <script src="index.js"></script>
+    <script src="dist/app.bundle.js"></script>
   </body>
 </html>
