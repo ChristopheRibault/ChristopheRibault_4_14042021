@@ -4,7 +4,8 @@
   "description": "1. Forkez ce repo ; 2. Il est conseillé d'utiliser VisualStudio Code et vous pouvez utiliser Docker, mais ce n'est pas obligatoire ; 3. Il n'y a aucune dépendance ; 4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.",
   "main": "index.js",
   "scripts": {
-    "sass": "sass ./style/index.sass ./style.css --watch"
+    "sass": "sass ./src/style/index.sass ./src/style/style.css --watch",
+    "build": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,21 @@
   "bugs": {
     "url": "https://github.com/ChristopheRibault/ChristopheRibault_4_14042021/issues"
   },
-  "homepage": "https://github.com/ChristopheRibault/ChristopheRibault_4_14042021#readme"
+  "homepage": "https://github.com/ChristopheRibault/ChristopheRibault_4_14042021#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "css-loader": "^5.2.4",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.36.1",
+    "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "moment": "^2.29.1"
+  }
 }
