@@ -2,7 +2,18 @@ import { form, validForm } from "../elements";
 
 const MIN_AGE = 18;
 
+
 class Form {
+
+  static errorMessages = {
+    first: "Minimum 2 caractères dont une lettre sont requis",
+    last: "Minimum 2 caractères dont une lettre sont requis",
+    email: "Format non valide. Ex: exemple@gameone.com",
+    birthdate: "Format non valide. Ex: 01/01/2000",
+    quantity: "Veuillez entrer une valeur entre 0 et 99",
+    location: "Veuillez séléctionner une ville",
+    checkbox1: "Veuillez accepter les conditions d'utilisation",
+  }
 
   /**
    * Set data-error-visible
@@ -11,6 +22,11 @@ class Form {
    */
   static toggleDataError(input){
     let visible = false
+    if(!input.value) {
+      input.parentElement.setAttribute("data-error", "Ce champs est requis")
+    } else {
+      input.parentElement.setAttribute("data-error", Form.errorMessages[input.name]);
+    }
     // If input is birthdate, date is valid but age is too young, change data-error message
     if (input.name === "birthdate" && input.checkValidity() && !Form.ageIsValid(input.value)) {
       visible = true;
